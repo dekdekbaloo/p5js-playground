@@ -1,6 +1,6 @@
 let segments = [ ]
 function setup () {
-  createCanvas(640, 480)
+  createCanvas(displayWidth, displayHeight)
   let len = 100
   for (let i = 0; i < 5; i++) {
     let segment
