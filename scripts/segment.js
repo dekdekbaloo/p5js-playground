@@ -27,12 +27,13 @@ function Segment(x, y, len, angle) {
   this.update = function () {
     this.updateB()
   }
-
+  
   this.draw = function () {
     strokeWeight(4)
     stroke(255)
     line(this.a.x, this.a.y, this.b.x, this.b.y)
   }
-
+  
+  this.updateB()
   return this
 }
