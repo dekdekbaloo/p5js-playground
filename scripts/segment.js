@@ -28,9 +28,9 @@ function Segment(x, y, len, angle) {
     this.updateB()
   }
   
-  this.draw = function () {
-    strokeWeight(4)
-    stroke(255)
+  this.draw = function (width = 4) {
+    strokeWeight(width)
+    stroke(color(120, 150, width / 5 * 255, width / 10 * 255))
     line(this.a.x, this.a.y, this.b.x, this.b.y)
   }
   
