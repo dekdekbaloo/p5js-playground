@@ -17,6 +17,11 @@ function Segment(x, y, len, angle) {
     let dy = y - this.a.y
 
     this.angle = atan2(dy, dx)
+    let target = createVector(x, y)
+    let diff = new p5.Vector(x - this.a.x, y - this.a.y)
+    diff.setMag(this.len)
+    diff.mult(-1)
+    this.a = p5.Vector.add(target, diff)
   }
 
   this.update = function () {
