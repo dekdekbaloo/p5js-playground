@@ -3,7 +3,6 @@ function Segment(x, y, len, angle) {
   this.b = new p5.Vector(0, 0)
   this.len = len
   this.angle = angle
-
   this.updateB = function () {
     angleMode(DEGREES)
     let x = this.len * cos(this.angle) + this.a.x
@@ -30,10 +29,9 @@ function Segment(x, y, len, angle) {
   
   this.draw = function (width = 4) {
     strokeWeight(width)
-    stroke(color(120, 150, width / 5 * 255, width / 10 * 255))
+    stroke(color(120, 150, width / 5 * 255, Math.max(125, width / 10 * 255)))
     line(this.a.x, this.a.y, this.b.x, this.b.y)
   }
-  
   this.updateB()
   return this
 }
