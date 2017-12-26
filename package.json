@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --watch lib --exec node lib/devServer.js"
+    "dev": "nodemon --watch lib --exec node lib/devServer.js --"
   },
   "devDependencies": {
     "ejs": "^2.5.7",
