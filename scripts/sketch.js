@@ -1,17 +1,18 @@
 let segments = [ ]
 function setup () {
   createCanvas(640, 480)
+  let len = 100
   for (let i = 0; i < 5; i++) {
     let segment
     if (i === 0) {
-      segment = new Segment(width * 0.5, height * 0.5, 100, 0)
+      segment = new Segment(width * 0.5, 0, len, 0)
     } else {
-      segment = new Segment(segments[i - 1].b.x, segments[i - 1].b.y, 100, 0)
+      segment = new Segment(segments[i - 1].b.x, segments[i - 1].b.y, len, (360 / 30) * i)
     }
     segments.push(segment)
   }
 }
-
+let selected = 5
 function draw () {
   segments.forEach((s, i) => {
     if (i === 0) s.follow(mouseX, mouseY)
@@ -19,8 +20,10 @@ function draw () {
       let lastSegment = segments[i - 1]
       s.follow(lastSegment.a.x, lastSegment.a.y)
     }
-    s.update()
   })
   background(0)
-  segments.forEach(s => s.draw())
+  segments.forEach(s => {
+    s.update()
+    s.draw()
+  })
 }
